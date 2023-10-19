@@ -16,3 +16,63 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#navLogo {
+    width: 80px;
+    height: auto;
+    
+}
+
+#navLogo:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+form {
+    color: black;
+    margin: 50px 8%;
+    padding: 30px;
+    text-align: left;
+    background: white;
+    border-radius: 10px;
+}
+
+.form-group, .form-check {
+    margin-bottom: 20px;
+}
+
+#labelForServicesRequested {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-buttons {
+    text-align: center;
+}
+
+#firstNameErrorMessage, #phoneErrorMessage, #servicesErrorMessage {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 1px;
+    margin-left: 2px;
+}
+
+.form-control {
+    margin-right: 20px;
+}
+
+#selectOne {
+    font-weight: normal;
+}
+
+.spinner-border {
+    display: none;
+}
+
+#loadingMessage {
+    display: none;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}

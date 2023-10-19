@@ -1,0 +1,127 @@
+﻿@page
+@model SmithEliteTraining.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Contact Me</h1>
+    <form id="myForm">
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   id="firstName"
+                   placeholder="First name (required)"
+                   onkeyup="validateFirstName()">
+            <p id="firstNameErrorMessage">Must enter a first name.</p>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control"
+                   id="lastName" placeholder="Last name">
+        </div>
+        <div class="form-group">
+            <input type="tel" class="form-control"
+                   id="phoneNumber"
+                   placeholder="Phone number (required)"
+                   onkeyup="validatePhone()">
+            <p id="phoneErrorMessage">
+                Must enter a valid
+                phone number.
+            </p>
+        </div>
+        <label id="labelForServicesRequested"
+               for="servicesRequested">
+            Services
+            Requesting
+            <span id="selectOne">(select one)</span>
+        </label>
+        <p id="servicesErrorMessage">
+            Must select at least
+            one service.
+        </p>
+
+        <div class="services-requested" id="servicesRequested">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox"
+                       id="springCleaningCheckBox"
+                       value="Spring Cleaning"
+                       name="services">
+                <label class="form-check-label"
+                       for="springCleaningCheckBox">
+                    Spring
+                    Cleaning
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="checkbox"
+                       id="lawnMaintenanceCheckBox"
+                       value="Lawn Maintenance"
+                       name="services">
+                <label class="form-check-label"
+                       for="lawnMaintenanceCheckBox">
+                    Lawn
+                    Maintenance
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="checkbox"
+                       id="weedKillerCheckBox"
+                       value="Weed Killer and Fertilizer"
+                       name="services">
+                <label class="form-check-label"
+                       for="weedKillerCheckBox">
+                    Weed
+                    Killer/Fertilizer
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="checkbox"
+                       id="bushTrimmingCheckBox"
+                       value="Bush Trimming" name="services">
+                <label class="form-check-label"
+                       for="bushTrimmingCheckBox">
+                    Bush
+                    Trimming
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input"
+                       type="checkbox"
+                       id="otherTypeOfServiceCheckBox"
+                       name="services"
+                       value="Other Service">
+                <label class="form-check-label"
+                       for="otherTypeOfServiceCheckBox">
+                    Other
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control"
+                      id="formTextArea"
+                      rows="3"
+                      placeholder="Type comments or questions here"></textarea>
+        </div>
+        <div class="form-buttons">
+            <button id="submitButton" class="btn btn-dark">
+                Submit
+            </button>
+            <input id="resetButton" type="reset"
+                   name="clear" class="btn btn-dark" value="Clear Form" />
+        </div>
+
+        <div id="loadingSection"
+             class="pt-2 d-flex justify-content-center">
+            <div id="spinner" class="spinner-border"
+                 role="status">
+            </div>
+            <p class="text-success"
+               id="loadingMessage">
+                Inquiry sent!
+            </p>
+        </div>
+    </form>
+</div>
